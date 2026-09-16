@@ -1,0 +1,70 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Palabra Hoy — Con la fuerza de la razón</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="header-inner">
+      <div class="logo">La Palabra Hoy</div>
+      <div class="date" id="today"></div>
+      <button class="admin-btn" onclick="openAdmin()">Editar noticias</button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="active" onclick="filterNews('Todas', this)">Todas</button>
+      <button onclick="filterNews('Política', this)">Política</button>
+      <button onclick="filterNews('Economía', this)">Economía</button>
+      <button onclick="filterNews('Mundo', this)">Mundo</button>
+      <button onclick="filterNews('Sociedad', this)">Sociedad</button>
+      <button onclick="filterNews('Deportes', this)">Deportes</button>
+      <button onclick="filterNews('Cultura', this)">Cultura</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="breaking">
+      <span>ÚLTIMA HORA</span>
+      <p id="ticker">Información y noticias de actualidad.</p>
+    </section>
+
+    <section class="hero-grid">
+      <article class="hero-card" id="featured"></article>
+      <div class="side-news" id="sideNews"></div>
+    </section>
+
+    <div class="section-title">
+      <h2>Últimas noticias</h2>
+      <div></div>
+    </div>
+    <section class="news-grid" id="newsGrid"></section>
+  </main>
+
+  <footer>
+    <p>La Palabra Hoy · Con la fuerza de la razón</p>
+  </footer>
+
+  <div class="modal" id="adminModal">
+    <div class="admin-panel">
+      <div class="panel-head">
+        <h2>Administrar noticias</h2>
+        <button onclick="closeAdmin()">×</button>
+      </div>
+      <p class="hint">Puedes agregar, editar o eliminar noticias. Los cambios quedan guardados en este navegador.</p>
+      <div id="adminList"></div>
+      <button class="add-btn" onclick="addNews()">+ Nueva noticia</button>
+      <button class="save-btn" onclick="saveAll()">Guardar cambios</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
